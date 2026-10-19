@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Shalom Baptist Church — Design system (white & blue)
+   ============================================================ */
+
+:root {
+  --background: #ffffff;
+  --foreground: #122e5e;
+
+  /* Brand palette */
+  --brand-navy: #0b2e5c;
+  --brand-navy-dark: #071e3d;
+  --brand-azure: #1e6fd1;
+  --brand-sky: #9cc5ee;
+  --brand-mist: #eef4fb;
+  --brand-gold: #d9a441;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-navy: var(--brand-navy);
+  --color-navy-dark: var(--brand-navy-dark);
+  --color-azure: var(--brand-azure);
+  --color-sky: var(--brand-sky);
+  --color-mist: var(--brand-mist);
+  --color-gold: var(--brand-gold);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px; /* offset for sticky navbar when using anchor links */
+}
+
+::selection {
+  background-color: var(--brand-azure);
+  color: #ffffff;
+}
+
+/* Reusable decorative elements */
+.shalom-divider {
+  background: linear-gradient(
+    90deg,
+    var(--brand-navy),
+    var(--brand-azure),
+    var(--brand-sky)
+  );
+  height: 3px;
+  border-radius: 999px;
+}
+/* ============================================================
+   Glass design system — page details blended with background
+   ============================================================ */
+
+/* Full-page fixed background photo layer */
+.page-photo-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+}
+.page-photo-bg img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Deep navy tinted glass panel (for content over photos) */
+.glass-card {
+  background: linear-gradient(
+    145deg,
+    rgba(11, 46, 92, 0.72),
+    rgba(7, 30, 61, 0.66)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 34px rgba(7, 30, 61, 0.32);
+}
+.glass-card h1,
+.glass-card h2,
+.glass-card h3 {
+  color: #ffffff;
+}
+.glass-card p,
+.glass-card li {
+  color: rgba(238, 244, 251, 0.9);
+}
+
+/* Mist/white tinted glass panel */
+.glass-card-light {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.78),
+    rgba(238, 244, 251, 0.7)
+  );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(30, 111, 209, 0.22);
+  box-shadow: 0 10px 30px rgba(11, 46, 92, 0.16);
+}
+
+/* Gold accent ring/border echoing --brand-gold */
+.glass-gold {
+  border: 1px solid rgba(217, 164, 65, 0.5);
+}
+
+/* Gradient veil: fades from photo (top) into page colour (bottom) */
+.bg-fade-b {
+  background: linear-gradient(
+    180deg,
+    rgba(7, 30, 61, 0) 0%,
+    rgba(7, 30, 61, 0.35) 55%,
+    rgba(7, 30, 61, 0.72) 100%
+  );
+}
+
+/* Section shell sitting over the page photo */
+.glass-section {
+  background: linear-gradient(
+    180deg,
+    rgba(7, 30, 61, 0.55),
+    rgba(11, 46, 92, 0.42)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(238, 244, 251, 0.92);
+}
+.glass-section h1,
+.glass-section h2,
+.glass-section h3 {
+  color: #ffffff;
+}

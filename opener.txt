@@ -1,0 +1,2 @@
+cd '/mnt/storage/project power/Shallom Baptist'
+npm run dev
